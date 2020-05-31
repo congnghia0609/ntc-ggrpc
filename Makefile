@@ -1,3 +1,10 @@
+# Author:       nghiatc
+# Email:        congnghia0609@gmail.com
+
+.PHONY: deps
+deps:
+	@./deps.sh
+
 .PHONY: gen
 gen:
 	@protoc ngrpc/calculator.proto --go_out=plugins=grpc:.
