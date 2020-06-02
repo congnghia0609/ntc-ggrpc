@@ -17,3 +17,6 @@ openssl x509 -req -passin pass:123456 -days 3650 -in server.csr -CA client.crt -
 
 # Convert the server certificate to .pem (server.pem) - usable by gRPC
 openssl pkcs8 -topk8 -nocrypt -passin pass:123456 -in server.key -out server.pem
+
+# HAProxy pem
+cat server.pem server.crt > haproxy.pem

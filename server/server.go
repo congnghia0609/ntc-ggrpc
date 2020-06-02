@@ -133,7 +133,8 @@ func (s *server) Square(ctx context.Context, req *ngrpc.SquareRequest) (*ngrpc.S
 }
 
 func main() {
-	lis, err := net.Listen("tcp", "0.0.0.0:3333")
+	addr := "0.0.0.0:3333"
+	lis, err := net.Listen("tcp", addr)
 	if err != nil {
 		log.Fatalf("Error server net listen tcp %v", err)
 	}
@@ -153,7 +154,7 @@ func main() {
 	//s := grpc.NewServer()
 	ngrpc.RegisterCalculatorServiceServer(s, &server{})
 
-	fmt.Println("Server is running...")
+	fmt.Printf("Server is running on: %v\n", addr)
 	err = s.Serve(lis)
 	if err != nil {
 		log.Fatalf("Server start error %v", err)

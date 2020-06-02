@@ -19,6 +19,9 @@ import (
 )
 
 func main() {
+	target := "localhost:3330" // grpc-haproxy
+	//target := "localhost:3333" // grpc-go
+
 	//====== Begin Mode SSL ======//
 	certFile := "ssl/client.crt"
 	creds, sslErr := credentials.NewClientTLSFromFile(certFile, "")
@@ -26,10 +29,10 @@ func main() {
 		log.Fatalf("Create client creds ssl error %v\n", sslErr)
 		return
 	}
-	conn, err := grpc.Dial("localhost:3333", grpc.WithTransportCredentials(creds))
+	conn, err := grpc.Dial(target, grpc.WithTransportCredentials(creds))
 	//====== End Mode SSL ======//
 
-	//conn, err := grpc.Dial("localhost:3333", grpc.WithInsecure())
+	//conn, err := grpc.Dial(target, grpc.WithInsecure())
 	defer conn.Close()
 	if err != nil {
 		log.Fatalf("Error dial connection %v", err)
@@ -46,7 +49,7 @@ func main() {
 
 	//callAverage(client)
 
-	//callFindMax(client)
+	callFindMax(client)
 
 	callSquareRoot(client, 9)
 }
