@@ -38,7 +38,7 @@ http {
         listen 3330 http2;
 
         # Can use location detail with a path of gRPC Service. Ex: /helloworld.Greeter
-        location /helloworld.Greeter {
+        location /ngrpc.CalculatorService {
             # The 'grpc://' ==> Non-SSL gRPC
             # The 'grpcs://' ==> SSL gRPC
             grpc_pass grpc://grpcservers;
@@ -74,11 +74,20 @@ http {
         ssl_certificate_key /ssl/server.pem;
 
         # Can use location detail with a path of gRPC Service. Ex: /helloworld.Greeter
-        location /helloworld.Greeter {
+        location /ngrpc.CalculatorService {
             # The 'grpc://' ==> Non-SSL gRPC
             # The 'grpcs://' ==> SSL gRPC
             grpc_pass grpcs://grpcservers;
         }
     }
 }
+```
+
+## Run project
+```bash
+// Run Server
+make server
+
+// Run client
+make client
 ```
