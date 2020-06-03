@@ -19,7 +19,7 @@ import (
 )
 
 func main() {
-	target := "localhost:3330" // grpc-haproxy
+	target := "localhost:3330" // grpc-haproxy | grpc-nginx
 	//target := "localhost:3333" // grpc-go
 
 	//====== Begin Mode SSL ======//
