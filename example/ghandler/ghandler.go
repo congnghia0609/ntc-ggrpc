@@ -7,7 +7,7 @@ import (
 	"io"
 	"log"
 	"math"
-	"ntc-ggrpc/ngrpc"
+	"ntc-ggrpc/example/ngrpc"
 	"time"
 )
 

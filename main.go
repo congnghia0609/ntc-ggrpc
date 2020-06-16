@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/congnghia0609/ntc-gconf/nconf"
-	"ntc-ggrpc/ghandler"
+	"ntc-ggrpc/example/ghandler"
+	"ntc-ggrpc/example/ngrpc"
 	"ntc-ggrpc/gserver"
-	"ntc-ggrpc/ngrpc"
 	"path/filepath"
 	"runtime"
 )

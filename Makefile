@@ -7,7 +7,7 @@ deps:
 
 .PHONY: gen
 gen:
-	@protoc ngrpc/calculator.proto --go_out=plugins=grpc:.
+	@protoc example/ngrpc/calculator.proto --go_out=plugins=grpc:.
 
 .PHONY: server
 server:

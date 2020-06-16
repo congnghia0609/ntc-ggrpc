@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ngrpc;
 
-option go_package="ngrpc";
+option go_package="example/ngrpc";
 
 message SumRequest {
     int32 num1 = 1;

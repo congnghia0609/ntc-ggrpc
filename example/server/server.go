@@ -9,15 +9,15 @@ package main
 import (
 	"context"
 	"fmt"
-	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/status"
 	"io"
+	"log"
 	"math"
 	"net"
-	"ntc-ggrpc/ngrpc"
+	"ntc-ggrpc/example/ngrpc"
 	"time"
 )
 

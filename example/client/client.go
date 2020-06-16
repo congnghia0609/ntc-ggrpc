@@ -14,7 +14,7 @@ import (
 	"google.golang.org/grpc/status"
 	"io"
 	"log"
-	"ntc-ggrpc/ngrpc"
+	"ntc-ggrpc/example/ngrpc"
 	"time"
 )
 
