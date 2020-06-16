@@ -30,7 +30,7 @@ func NewGClient(name string) *GClient {
 	c := nconf.GetConfig()
 	target := c.GetString(name + GCPrefix + "target") //"localhost:3333"
 	isSSL := c.GetBool(name + GCPrefix + "is_ssl")
-	fmt.Printf("NewGClient isSSL: %v\n", isSSL)
+	fmt.Printf("NewGClient[%s] isSSL: %v\n", name, isSSL)
 	var conn *grpc.ClientConn
 	var err error
 	if isSSL {
