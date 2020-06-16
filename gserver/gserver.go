@@ -39,6 +39,7 @@ func NewGServer(name string) *GServer {
 	var s *grpc.Server
 	var opts grpc.ServerOption
 	isSSL := c.GetBool(name + GSPrefix + "is_ssl")
+	fmt.Printf("NewGServer isSSL: %v\n", isSSL)
 	if isSSL {
 		certFile := c.GetString(name + GSPrefix + "cert_file") //"ssl/server.crt"
 		keyFile := c.GetString(name + GSPrefix + "key_file")   //"ssl/server.pem"

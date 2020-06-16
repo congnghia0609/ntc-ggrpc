@@ -15,7 +15,7 @@ server:
 
 .PHONY: client
 client:
-	@go run client/client.go
+	@go run cli.go
 
 .PHONY: ssl
 ssl:

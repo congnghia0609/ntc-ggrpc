@@ -21,7 +21,11 @@ func main() {
 	// Init NConf
 	InitNConf()
 
-	// Start GServer
+	// Start CalServer
+	StartCalServer()
+}
+
+func StartCalServer() {
 	name := "ngrpc"
 	gs := gserver.NewGServer(name)
 	ngrpc.RegisterCalculatorServiceServer(gs.Server, &ghandler.CalculatorHandler{})
