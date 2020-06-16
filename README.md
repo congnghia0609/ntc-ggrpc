@@ -225,6 +225,9 @@ func (cc *CalClient) CallSquareRoot(num int32) {
 
 ## Run project
 ```bash
+// Gen Source Code
+make gen
+
 // Run Server
 make server
 
