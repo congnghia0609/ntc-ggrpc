@@ -6,6 +6,7 @@
 
 echo "Install library dependencies..."
 
+go get -u github.com/congnghia0609/ntc-gconf
 go get -u github.com/tools/godep
 go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
 go get -u google.golang.org/grpc

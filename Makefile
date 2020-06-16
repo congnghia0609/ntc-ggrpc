@@ -11,7 +11,7 @@ gen:
 
 .PHONY: server
 server:
-	@go run server/server.go
+	@go run main.go
 
 .PHONY: client
 client:

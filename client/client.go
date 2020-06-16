@@ -7,20 +7,20 @@
 package main
 
 import (
-	log "github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/status"
 	"io"
+	"log"
 	"ntc-ggrpc/ngrpc"
 	"time"
 )
 
 func main() {
-	target := "localhost:3330" // grpc-haproxy | grpc-nginx
-	//target := "localhost:3333" // grpc-go
+	//target := "localhost:3330" // grpc-haproxy | grpc-nginx
+	target := "localhost:3333" // grpc-go
 
 	//====== Begin Mode SSL ======//
 	certFile := "ssl/client.crt"

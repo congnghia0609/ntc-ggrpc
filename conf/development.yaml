@@ -1,0 +1,11 @@
+
+ngrpc:
+  gserver:
+    address: 0.0.0.0:3333
+    is_ssl: true
+    cert_file: ssl/server.crt
+    key_file: ssl/server.pem
+
+
+
+
