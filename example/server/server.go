@@ -21,7 +21,7 @@ import (
 	"time"
 )
 
-type server struct {}
+type server struct{}
 
 func (s *server) Sum(ctx context.Context, req *ngrpc.SumRequest) (*ngrpc.SumResponse, error) {
 	log.Println("sum called...")
@@ -53,7 +53,7 @@ func (s *server) PrimeNumberDecomposition(req *ngrpc.PNDRequest, stream ngrpc.Ca
 	k := int32(2)
 	N := req.GetNumber()
 	for N > 1 {
-		if N % k == 0 {
+		if N%k == 0 {
 			N = N / k
 			// send to client
 			stream.Send(&ngrpc.PNDResponse{

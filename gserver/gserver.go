@@ -18,11 +18,11 @@ import (
 const GSPrefix = ".gserver."
 
 type GServer struct {
-	Name string
-	Addr string
-	Conn net.Listener
-	IsSSL bool
-	Opts grpc.ServerOption
+	Name   string
+	Addr   string
+	Conn   net.Listener
+	IsSSL  bool
+	Opts   grpc.ServerOption
 	Server *grpc.Server
 }
 

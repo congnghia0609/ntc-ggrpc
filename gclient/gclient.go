@@ -17,10 +17,10 @@ import (
 const GCPrefix = ".gclient."
 
 type GClient struct {
-	Name string
+	Name   string
 	Target string
-	IsSSL bool
-	Conn *grpc.ClientConn
+	IsSSL  bool
+	Conn   *grpc.ClientConn
 }
 
 func NewGClient(name string) *GClient {

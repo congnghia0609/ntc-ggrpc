@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-type CalculatorHandler struct {}
+type CalculatorHandler struct{}
 
 func (ch *CalculatorHandler) Sum(ctx context.Context, req *ngrpc.SumRequest) (*ngrpc.SumResponse, error) {
 	log.Println("sum called...")
@@ -43,7 +43,7 @@ func (ch *CalculatorHandler) PrimeNumberDecomposition(req *ngrpc.PNDRequest, str
 	k := int32(2)
 	N := req.GetNumber()
 	for N > 1 {
-		if N % k == 0 {
+		if N%k == 0 {
 			N = N / k
 			// send to client
 			stream.Send(&ngrpc.PNDResponse{
@@ -66,7 +66,7 @@ func (ch *CalculatorHandler) Average(stream ngrpc.CalculatorService_AverageServe
 	for {
 		req, err := stream.Recv()
 		if err == io.EOF {
-			// Tinh trung binh va return ve client
+			// Tinh trung binh va tra ve client
 			resp := &ngrpc.AverageResponse{
 				Result: total / float32(count),
 			}
