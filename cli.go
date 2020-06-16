@@ -30,25 +30,24 @@ func main() {
 	name := "ngrpc"
 	cc := NewCalClient(name)
 
-	//cc.CallSum()
-	//
-	//cc.CallSumWithDeadline(1*time.Second)
-	//cc.CallSumWithDeadline(5*time.Second)
-	//
-	//cc.CallPND()
-	//
-	//cc.CallAverage()
+	cc.CallSum()
+
+	cc.CallSumWithDeadline(1 * time.Second)
+	cc.CallSumWithDeadline(5 * time.Second)
+
+	cc.CallPND()
+
+	cc.CallAverage()
 
 	cc.CallFindMax()
 
 	cc.CallSquareRoot(9)
-
 }
 
 type CalClient struct {
 	Name string
 	GCli *gclient.GClient
-	Cli ngrpc.CalculatorServiceClient
+	Cli  ngrpc.CalculatorServiceClient
 }
 
 func NewCalClient(name string) *CalClient {
@@ -129,19 +128,19 @@ func (cc *CalClient) CallAverage() {
 		log.Fatalf("call average error %v\n", err)
 	}
 
-	listReq := []ngrpc.AverageRequest {
-		ngrpc.AverageRequest{ Num: 5, },
-		ngrpc.AverageRequest{ Num: 10, },
-		ngrpc.AverageRequest{ Num: 15, },
-		ngrpc.AverageRequest{ Num: 20, },
-		ngrpc.AverageRequest{ Num: 25, },
+	listReq := []ngrpc.AverageRequest{
+		ngrpc.AverageRequest{Num: 5},
+		ngrpc.AverageRequest{Num: 10},
+		ngrpc.AverageRequest{Num: 15},
+		ngrpc.AverageRequest{Num: 20},
+		ngrpc.AverageRequest{Num: 25},
 	}
 	for _, req := range listReq {
 		err := stream.Send(&req)
 		if err != nil {
 			log.Fatalf("Send average request error %v\n", err)
 		}
-		time.Sleep(1*time.Second)
+		time.Sleep(1 * time.Second)
 	}
 	resp, err := stream.CloseAndRecv()
 	if err != nil {
@@ -160,11 +159,11 @@ func (cc *CalClient) CallFindMax() {
 	go func() {
 		// Gui nhieu request
 		listReq := []ngrpc.FindMaxRequest{
-			ngrpc.FindMaxRequest{Num: 5,},
-			ngrpc.FindMaxRequest{Num: 10,},
-			ngrpc.FindMaxRequest{Num: 1,},
-			ngrpc.FindMaxRequest{Num: 6,},
-			ngrpc.FindMaxRequest{Num: 9,},
+			ngrpc.FindMaxRequest{Num: 5},
+			ngrpc.FindMaxRequest{Num: 10},
+			ngrpc.FindMaxRequest{Num: 1},
+			ngrpc.FindMaxRequest{Num: 6},
+			ngrpc.FindMaxRequest{Num: 9},
 		}
 		for _, req := range listReq {
 			err := stream.Send(&req)
@@ -172,7 +171,7 @@ func (cc *CalClient) CallFindMax() {
 				log.Fatalf("send find max request error %v\n", err)
 				break
 			}
-			time.Sleep(1*time.Second)
+			time.Sleep(1 * time.Second)
 		}
 		stream.CloseSend()
 	}()

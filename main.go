@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/congnghia0609/ntc-gconf/nconf"
 	"ntc-ggrpc/ghandler"
-	"ntc-ggrpc/ngrpc"
 	"ntc-ggrpc/gserver"
+	"ntc-ggrpc/ngrpc"
 	"path/filepath"
 	"runtime"
 )
