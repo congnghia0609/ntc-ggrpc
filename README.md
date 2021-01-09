@@ -1,5 +1,25 @@
 # ntc-ggrpc
-ntc-ggrpc is a example golang gRPC  
+ntc-ggrpc is an example golang gRPC  
+
+
+## Quick start
+```bash
+// Install dependencies
+make deps
+
+// Gen Source Code gRPC
+make gen
+
+// Gen resource SSL
+make ssl
+
+// Run Server
+make server
+
+// Run client
+make client
+```
+
 
 ## gRPC Server
 Example CalculatorService Server:  
@@ -223,17 +243,6 @@ func (cc *CalClient) CallSquareRoot(num int32) {
 }
 ```
 
-## Run project
-```bash
-// Gen Source Code
-make gen
-
-// Run Server
-make server
-
-// Run client
-make client
-```
 
 ## HAProxy Config Load Balancer for gRPC Server
 ```bash
