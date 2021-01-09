@@ -8,9 +8,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/congnghia0609/ntc-gconf/nconf"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 	"io"
 	"log"
 	"ntc-ggrpc/example/ngrpc"
@@ -18,6 +15,10 @@ import (
 	"path/filepath"
 	"runtime"
 	"time"
+
+	"github.com/congnghia0609/ntc-gconf/nconf"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 )
 
 func InitNConf2() {
@@ -34,6 +35,7 @@ func main() {
 	// Calculator Client
 	name := "ngrpc"
 	cc := NewCalClient(name)
+	defer cc.Close()
 
 	cc.CallSum()
 
