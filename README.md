@@ -31,19 +31,19 @@ func InitNConf() {
 	nconf.Init(wdir)
 }
 
+func StartCalServer() {
+	name := "ngrpc"
+	gs := gserver.NewGServer(name)
+	ngrpc.RegisterCalculatorServiceServer(gs.Server, &ghandler.CalculatorHandler{})
+	gs.Start()
+}
+
 func main() {
 	// Init NConf
 	InitNConf()
 
 	// Start CalServer
 	StartCalServer()
-}
-
-func StartCalServer() {
-	name := "ngrpc"
-	gs := gserver.NewGServer(name)
-	ngrpc.RegisterCalculatorServiceServer(gs.Server, &ghandler.CalculatorHandler{})
-	gs.Start()
 }
 ```
 
@@ -57,6 +57,7 @@ func main() {
 	// Calculator Client
 	name := "ngrpc"
 	cc := NewCalClient(name)
+	defer cc.Close()
 
 	cc.CallSum()
 

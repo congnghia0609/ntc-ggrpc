@@ -7,12 +7,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/congnghia0609/ntc-gconf/nconf"
 	"ntc-ggrpc/example/ghandler"
 	"ntc-ggrpc/example/ngrpc"
 	"ntc-ggrpc/gserver"
 	"path/filepath"
 	"runtime"
+
+	"github.com/congnghia0609/ntc-gconf/nconf"
 )
 
 func InitNConf() {
@@ -22,17 +23,17 @@ func InitNConf() {
 	nconf.Init(wdir)
 }
 
+func StartCalServer() {
+	name := "ngrpc"
+	gs := gserver.NewGServer(name)
+	ngrpc.RegisterCalculatorServiceServer(gs.Server, &ghandler.CalculatorHandler{})
+	gs.Start()
+}
+
 func main() {
 	// Init NConf
 	InitNConf()
 
 	// Start CalServer
 	StartCalServer()
-}
-
-func StartCalServer() {
-	name := "ngrpc"
-	gs := gserver.NewGServer(name)
-	ngrpc.RegisterCalculatorServiceServer(gs.Server, &ghandler.CalculatorHandler{})
-	gs.Start()
 }
