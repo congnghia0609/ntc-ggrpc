@@ -9,6 +9,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/congnghia0609/ntc-ggrpc/example/ngrpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials"
@@ -17,7 +18,6 @@ import (
 	"log"
 	"math"
 	"net"
-	"ntc-ggrpc/example/ngrpc"
 	"time"
 )
 

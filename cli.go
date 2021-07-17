@@ -8,10 +8,10 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/congnghia0609/ntc-ggrpc/example/ngrpc"
+	"github.com/congnghia0609/ntc-ggrpc/gclient"
 	"io"
 	"log"
-	"ntc-ggrpc/example/ngrpc"
-	"ntc-ggrpc/gclient"
 	"path/filepath"
 	"runtime"
 	"time"

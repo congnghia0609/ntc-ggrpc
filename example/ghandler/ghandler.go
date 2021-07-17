@@ -7,12 +7,12 @@ package ghandler
 
 import (
 	"context"
+	"github.com/congnghia0609/ntc-ggrpc/example/ngrpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"io"
 	"log"
 	"math"
-	"ntc-ggrpc/example/ngrpc"
 	"time"
 )
 

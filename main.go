@@ -7,9 +7,9 @@ package main
 
 import (
 	"fmt"
-	"ntc-ggrpc/example/ghandler"
-	"ntc-ggrpc/example/ngrpc"
-	"ntc-ggrpc/gserver"
+	"github.com/congnghia0609/ntc-ggrpc/example/ghandler"
+	"github.com/congnghia0609/ntc-ggrpc/example/ngrpc"
+	"github.com/congnghia0609/ntc-ggrpc/gserver"
 	"path/filepath"
 	"runtime"
 

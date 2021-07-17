@@ -7,6 +7,7 @@
 package main
 
 import (
+	"github.com/congnghia0609/ntc-ggrpc/example/ngrpc"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -14,7 +15,6 @@ import (
 	"google.golang.org/grpc/status"
 	"io"
 	"log"
-	"ntc-ggrpc/example/ngrpc"
 	"time"
 )
 
