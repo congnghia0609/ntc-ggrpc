@@ -5,7 +5,11 @@ ntc-ggrpc is an example golang gRPC
 ## Quick start
 ```bash
 // Install dependencies
-make deps
+//make deps
+go mod download
+
+// update go.mod file
+go mod tidy
 
 // Gen Source Code gRPC
 make gen
